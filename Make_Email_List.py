@@ -27,20 +27,22 @@ argumentList = sys.argv[1:]
 
 try:
     # Parsing argument
-    arguments, values = getopt.getopt(argumentList)
+    arguments = getopt.getopt(argumentList)
      
     # checking each argument
-    for currentArgument, currentValue in arguments:
+    for currentArgument in arguments:
  
         if currentArgument in ("-h", "--Help"):
             print ("This script sorts through linkedin data and isolates emails\n %s inputfile outputfile", sys.argv[0])
              
-        elif len(argumentList) = 2:
+        elif len(argumentList) == 2:
             parsefile(sys.argv[1], sys.argv[2])
              
         
 except getopt.error as err:
     # output error, and return with an error code
     print (str(err))
+
+
 
 
