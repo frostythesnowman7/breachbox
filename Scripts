@@ -1,1 +1,2 @@
 for i in $(cat creds3);do h=`echo $i |cut -d ":" -f1`; name=`grep $h hanmi-bank.out`; echo "${i}:$name";done
+while read line; do first=`echo $line|cut -d "," -f4`; last=`echo $line|cut -d "," -f5`; pass=`echo $line|cut -d ":" -f2`;echo "${first// /}.${last// /}@hanmi.com:${pass}"; done < cl
